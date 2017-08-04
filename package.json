@@ -1,0 +1,31 @@
+{
+  "name": "mbed-integration",
+  "main": "./lib/mbed-integration",
+  "version": "0.0.0",
+  "description": "Integrate mbed development into Atom",
+  "keywords": [
+  ],
+  "repository": "https://github.com/wendlers/atom-mbed-integration",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-package-deps": "^4.6.0"
+  },
+  "package-deps": [
+    "tool-bar",
+    "linter",
+    "build",
+    "build-mbed",
+    "pyocd",
+    "sermon"
+  ],
+  "consumedServices": {
+    "tool-bar": {
+      "versions": {
+        "^0 || ^1": "consumeToolBar"
+      }
+    }
+  }
+}

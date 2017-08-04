@@ -1,0 +1,31 @@
+<atom-panel class='padded'>
+    <h4 class='block'>Mbed Installer</h4>
+
+    <atom-panel class='padded'>
+        <div class="inset-panel" id="mbed-installer-note-panel">
+            <div class="panel-heading">Note</div>
+            <div class="panel-body padded">
+              <div class='block'>
+                  <span class='inline-block' id='mbed-installer-note'>Proceed with mbed toolchain installation?</span>
+              </div>
+            </div>
+        </div>
+        <div class="inset-panel" id="mbed-installer-progress-panel">
+            <div class="panel-heading">Progess</div>
+            <div class="panel-body padded">
+              <div class='block'>
+                  <span class='loading loading-spinner-tiny inline-block'></span>
+                  <span class='inline-block' id='mbed-installer-message'>Installing mbed toolchain</span>
+              </div>
+            </div>
+        </div>
+    </atom-panel>
+
+    <p>
+      <div class='block' style='text-align:center;'>
+        <button class='btn icon icon-check inline-block-tight' id='mbed-installer-install'>install</button>
+        <button class='btn icon icon-x inline-block-tight' id='mbed-installer-close'>close</button>
+      </div>
+    </p>
+
+</atom-panel>

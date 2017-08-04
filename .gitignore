@@ -1,0 +1,6 @@
+.DS_Store
+npm-debug.log
+node_modules
+pyocd_settings.json
+sermon_settings.json
+resources/mbed-toolchain
