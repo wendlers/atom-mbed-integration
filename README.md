@@ -4,6 +4,7 @@ This package tries to add as much features as possible to Atom to help you with 
 
 Basically the following is available after installing this package:
 
+* A tool-bar to give you quick access to the most common tasks
 * Support to compile Mbed projects (by using mbed-cli)
 * Flash .hex or .bin files to your device
 * See the `printf` output from your device on a serial monitor
