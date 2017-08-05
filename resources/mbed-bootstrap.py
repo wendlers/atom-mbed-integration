@@ -1,5 +1,8 @@
-import virtualenv, textwrap
-import os, subprocess
+import virtualenv
+import textwrap
+import os
+import sys
+import subprocess
 
 output = virtualenv.create_bootstrap_script(textwrap.dedent("""
 import urllib
@@ -77,4 +80,16 @@ def after_install(options, home_dir):
 
 """))
 
+print('Boostrapping installer')
+
 f = open('mbed-installer.py', 'w').write(output)
+
+'''
+if os.path.isdir(sys.argv[1]):
+    subprocess.call(['rm', '-fr', sys.argv[1]])
+    print('Deleted previous installation directory')
+'''
+
+print('Starting installer')
+
+os.execve(sys.executable, [sys.executable] + ['mbed-installer.py'] + sys.argv[1:], os.environ)

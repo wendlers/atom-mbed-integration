@@ -15,7 +15,12 @@
   },
   "package-deps": [
     "tool-bar",
+    "busy",
+    "busy-signal",
+    "intentions",
+    "linter-ui-default",
     "linter",
+    "termination",
     "build",
     "build-mbed",
     "pyocd",
