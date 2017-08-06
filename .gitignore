@@ -4,3 +4,5 @@ node_modules
 pyocd_settings.json
 sermon_settings.json
 resources/mbed-toolchain
+resources/mbed-installer.py
+*.pyc
