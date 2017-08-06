@@ -1,18 +1,18 @@
 {
   "name": "mbed-integration",
   "main": "./lib/mbed-integration",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Integrate mbed development into Atom",
   "keywords": [
-	"mbed",
-	"mbed-cli",
-	"pyocd",
-	"mbedded",
-	"build",
-	"arm",
-	"compile",
-	"software development",
-	"installer"
+    "mbed",
+    "mbed-cli",
+    "pyocd",
+    "mbedded",
+    "build",
+    "arm",
+    "compile",
+    "software development",
+    "installer"
   ],
   "repository": "https://github.com/wendlers/atom-mbed-integration",
   "license": "MIT",
