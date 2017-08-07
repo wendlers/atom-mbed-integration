@@ -1,10 +1,39 @@
-import virtualenv
+#!/usr/bin/python2
+
+import platform
+import sys
+
+if platform.system() != 'Linux':
+    sys.stderr.write('mbed-installer: unsupported system "%s"\n' % platform.system())
+    sys.exit(1)
+
+try:
+
+    try:
+        # try what was installed systemwide (best option)
+        import virtualenv
+        print("Using build in virtualenv")
+    except:
+
+        if platform.linux_distribution()[0].lower() == 'debian':
+            # debian has a special version
+            import virtualenv_debian as virtualenv
+            print("Using provided Debian virtualenv")
+        else:
+            # and this is the original version
+            import virtualenv_default as virtualenv
+            print("Using provided default virtualenv")
+
+except Exception as e:
+    sys.stderr.write('mbed-installer: No suitable virtualenv. Try "sudo pip2 install virtualenv."\n')
+    sys.stderr.flush()
+    sys.exit(1)
+
 import textwrap
 import os
-import sys
 import subprocess
 
-output = virtualenv.create_bootstrap_script(textwrap.dedent("""
+script = """
 import urllib
 
 gcc_arm_url = 'https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/6-2017q2/gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2'
@@ -78,18 +107,24 @@ def after_install(options, home_dir):
     download_file(home_dir, gcc_arm_url, 'gcc-arm-none-eabi', 'gcc-arm-none-eabi.tar.bz2')
     install_tbz2(home_dir, '-jxf', 'gcc-arm-none-eabi.tar.bz2', 'gcc-arm-none-eabi', 1)
 
-"""))
+"""
 
-print('Boostrapping installer')
+try:
 
-f = open('mbed-installer.py', 'w').write(output)
+    print('Boostrapping installer')
 
-'''
-if os.path.isdir(sys.argv[1]):
-    subprocess.call(['rm', '-fr', sys.argv[1]])
-    print('Deleted previous installation directory')
-'''
+    output = virtualenv.create_bootstrap_script(textwrap.dedent(script))
 
-print('Starting installer')
+    f = open('mbed-installer.py', 'w')
+    f.write(output)
+    f.close()
 
-os.execve(sys.executable, [sys.executable] + ['mbed-installer.py'] + sys.argv[1:], os.environ)
+    print('Starting installer')
+
+    os.execve(sys.executable, [sys.executable] + ['mbed-installer.py'] + sys.argv[1:], os.environ)
+
+except Exception as e:
+    
+    sys.stderr.write('mbed-installer: Unable to bootstrap virtualenv\n')
+    sys.stderr.flush()
+    sys.exit(1)

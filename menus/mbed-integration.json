@@ -1,26 +1,6 @@
 {
   "context-menu": {
-    "atom-text-editor": [
-      {
-        "label": "Toggle atom-mbed-integration",
-        "command": "mbed-integration:toggle"
-      }
-    ]
   },
   "menu": [
-    {
-      "label": "Packages",
-      "submenu": [
-        {
-          "label": "mbed-integration",
-          "submenu": [
-            {
-              "label": "Toggle",
-              "command": "mbed-integration:toggle"
-            }
-          ]
-        }
-      ]
-    }
   ]
 }
