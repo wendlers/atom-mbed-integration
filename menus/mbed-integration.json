@@ -2,5 +2,23 @@
   "context-menu": {
   },
   "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "mbed-integration",
+          "submenu": [
+            {
+              "label": "Create project",
+              "command": "mbed-integration:new-project"
+            },
+            {
+              "label": "Run toolchin installer",
+              "command": "mbed-integration:installer"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
