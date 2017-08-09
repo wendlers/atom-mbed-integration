@@ -1,0 +1,98 @@
+<atom-panel class='padded'>
+    <h4 class='block'>Create New Mbed Project</h4>
+
+    <atom-panel class='padded'>
+
+        <div class="inset-panel" id="mbed-newprj-progress-panel">
+            <div class="panel-heading">Progress</div>
+            <div class="panel-body padded">
+              <div class='block'>
+                  <span class='loading loading-spinner-tiny inline-block'></span>
+                  <span class='inline-block' id='mbed-newprj-message'>Creating new mbed project ...</span>
+              </div>
+            </div>
+        </div>
+
+        <div class="inset-panel" id="mbed-newprj-error-panel">
+            <div class="panel-heading">ERROR</div>
+              <div class='block'>
+                <div class="panel-body padded">
+                  <span class='loading inline-block icon-alert'></span>
+                  <span class='inline-block' id='mbed-newprj-error'>Failed to create project</span>
+              </div>
+            </div>
+        </div>
+
+        <div class="inset-panel" id="mbed-newprj-settings-panel">
+
+            <div class="panel-heading">Settings</div>
+            <div class="panel-body padded">
+
+              <div class='block'>
+                  <div>Project directory</div>
+                  <input class='input-text native-key-bindings' type='text' placeholder='none' id='mbed-newprj-dir'>
+              </div>
+
+              <div class='block'>
+                <div>
+                    Mbed-os to add
+                </div>
+                <p>
+                  <select name='board' id='mbed-newprj-mbed-os'>
+                    <option value='default' selected>mbed-os (latest)</option>
+                    <option value='classic'>mebd-os classic (version 2)</option>
+                    <option value='none'>none</option>
+                  </select>
+                </p>
+
+              </div>
+
+              <div class='block'>
+                <div>
+                    SCM to use
+                </div>
+                <p>
+                  <select name='board' id='mbed-newprj-scm'>
+                    <option value='git' selected>git</option>
+                    <option value='hg'>mercurial</option>
+                    <option value='none'>none</option>
+                  </select>
+                </p>
+              </div>
+
+              <div class='block'>
+                  <div>Target MCU</div>
+                  <input class='input-text native-key-bindings' type='text' placeholder='default' id='mbed-newprj-mcu'>
+              </div>
+
+              <div class='block'>
+                  <div>ARM Toolchain</div>
+                  <p>
+                    <select name='board' id='mbed-newprj-toolchain'>
+                      <option value='ARM'>ARM</option>
+                      <option value='GCC_ARM' selected>GCC_ARM</option>
+                      <option value='IAR'>IAR</option>
+                    </select>
+                  </p>
+              </div>
+
+              <div class='block'>
+                <div>
+                    Libraries to add (one URL / library per line)
+                </div>
+                <textarea class='input-text native-key-bindings input-textarea' placeholder='libraries' id='mbed-newprj-libraries'></textarea>
+              </div>
+
+            </div>
+
+        </div>
+
+    </atom-panel>
+
+    <p>
+      <div class='block' style='text-align:center;'>
+        <button class='btn icon icon-check inline-block-tight' id='mbed-newprj-create'>create</button>
+        <button class='btn icon icon-x inline-block-tight' id='mbed-newprj-cancel'>cancel</button>
+      </div>
+    </p>
+</atom-panel>

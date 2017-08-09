@@ -5,6 +5,7 @@ This package tries to add as much features as possible to Atom to help you with 
 Basically the following is available after installing this package:
 
 * A tool-bar to give you quick access to the most common tasks (compile, flash, serial monitor, mbed-cli)
+* Simple 'wizzard' dialog to quickly setup / create a new mbed project
 * Support to compile mbed projects (by using [mbed-cli](https://github.com/ARMmbed/mbed-cli))
 * Flash .hex or .bin files to your device (by using [pyOCD](https://github.com/mbedmicro/pyOCD))
 * See the `printf` output from your device on a serial monitor
@@ -81,7 +82,21 @@ To install from git:
 
 ## Usage
 
-When installing this package, it will first install the above listed Atom package dependencies. Next, if your system supports it, the mbed toolchain will be installed (if not, see the section about installing the toolchain by hand). After this steps, the `mbed-integration` toolbar should be shown on the top of your editor. For details on how to setup and use the components for mebd development see:
+When installing this package, it will first install the above listed Atom package dependencies. Next, if your system supports it, the mbed toolchain will be installed (if not, see the section about installing the toolchain by hand). After this steps, the `mbed-integration` toolbar should be shown on the top of your editor. By clicking on the `rocket` symbol, the project creation dialog will be shown.
+
+E.g. to create a new mbed project for the Nordic NRF52 DK, use the following settings:
+
+![screenshot](https://raw.githubusercontent.com/wendlers/atom-mbed-integration/master/doc/nrf52dk.png)
+
+To create a project for the BBC:microbit:
+
+![screenshot](https://raw.githubusercontent.com/wendlers/atom-mbed-integration/master/doc/microbit.png)
+
+Or the ReadBaerLabs BLNANO2:
+
+![screenshot](https://raw.githubusercontent.com/wendlers/atom-mbed-integration/master/doc/blenano2.png)
+
+For more details on how to setup and use the components for mebd development see:
 
 * [Compiling mbed projects with `build-mbed`](https://atom.io/packages/build-mbed)
 * [Flashing mbed projects with `pyocd`](https://atom.io/packages/pyocd)
