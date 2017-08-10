@@ -2,6 +2,8 @@
 
 import platform
 import sys
+import os
+
 
 if platform.system() != 'Linux':
     sys.stderr.write('mbed-installer: unsupported system "%s"\n' % platform.system())
@@ -115,16 +117,18 @@ try:
 
     output = virtualenv.create_bootstrap_script(textwrap.dedent(script))
 
-    f = open('mbed-installer.py', 'w')
+    script = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'mbed-installer.py')
+
+    f = open(script, 'w')
     f.write(output)
     f.close()
 
     print('Starting installer')
 
-    os.execve(sys.executable, [sys.executable] + ['mbed-installer.py'] + sys.argv[1:], os.environ)
+    os.execve(sys.executable, [sys.executable] + [script] + sys.argv[1:], os.environ)
 
 except Exception as e:
-    
+
     sys.stderr.write('mbed-installer: Unable to bootstrap virtualenv\n')
     sys.stderr.flush()
     sys.exit(1)
