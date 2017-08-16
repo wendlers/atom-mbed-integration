@@ -1,4 +1,7 @@
 {
   "atom-workspace": {
+    "ctrl-alt-p": "mbed-integration:flash-tool-toggle",
+    "ctrl-alt-s": "mbed-integration:flash-tool-flash",
+    "ctrl-alt-e": "mbed-integration:flash-tool-erase"
   }
 }
