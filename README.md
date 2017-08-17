@@ -7,7 +7,7 @@ Basically the following is available after installing this package:
 * A tool-bar to give you quick access to the most common tasks (compile, flash, serial monitor, mbed-cli)
 * Simple 'wizzard' dialog to quickly setup / create a new mbed project
 * Support to compile mbed projects (by using [mbed-cli](https://github.com/ARMmbed/mbed-cli))
-* Flash .hex or .bin files to your device (by using [pyOCD](https://github.com/mbedmicro/pyOCD))
+* Flash .hex or .bin files to your device (by using [pyOCD](https://github.com/mbedmicro/pyOCD) or [stlink V2](https://github.com/texane/stlink))
 * See the `printf` output from your device on a serial monitor
 
 If you use Atom on a supported system (currently __only Linux x64__), this package will offer to install a complete mbed toolchain, including `mbed-cli`, `pyOCD` and the GCC compiler for ARM.
@@ -39,6 +39,7 @@ In detail, the following packages will be installed as dependencies by this pack
 * [build](https://atom.io/packages/build)
 * [build-mbed](https://atom.io/packages/build-mbed)
 * [pyocd](https://atom.io/packages/pyocd)
+* [stlink](https://atom.io/packages/stlink)
 * [sermon](https://atom.io/packages/sermon)
 
 ## Python Modules Installed by this Package
@@ -61,6 +62,7 @@ A working __Python 2.7__ is needed ([mbed-cli](https://github.com/ARMmbed/mbed-c
     sudo apt install python
     sudo apt install git
 
+If you are going to use stlink, make sure you installed the `st-flash` and `st-info` binaries on your system. See [here](https://github.com/texane/stlink) on how to get the binaries.
 Everything else will be installed by the installer (mbed-cli, pyocd, gcc for ARM, etc.).
 
 However, if you run into problems with the installer getting errors like `mbed-installer: No suitable virtualenv.` or `mbed-installer: Unable to bootstrap virtualenv`, try installing `virtualenv` by hand (some distributions use a tailored version of this module):
@@ -100,6 +102,7 @@ For more details on how to setup and use the components for mebd development see
 
 * [Compiling mbed projects with `build-mbed`](https://atom.io/packages/build-mbed)
 * [Flashing mbed projects with `pyocd`](https://atom.io/packages/pyocd)
+* [Flashing mbed projects with `stlink`](https://atom.io/packages/stlink)
 * [Monitor the serial line of an embedded device with `sermon`](https://atom.io/packages/sermon)
 
 ## Installing the Mbed Toolchain by Hand
