@@ -1,8 +1,11 @@
 {
   "atom-workspace": {
+    "ctrl-alt-n": "mbed-integration:new-project",
+    "ctrl-alt-i": "mbed-integration:installer",
     "ctrl-alt-p": "mbed-integration:flash-tool-toggle",
     "ctrl-alt-s": "mbed-integration:flash-tool-flash",
-    "ctrl-alt-e": "mbed-integration:flash-tool-erase"
+    "ctrl-alt-e": "mbed-integration:flash-tool-erase",
+    "ctrl-alt-c": "mbed-integration:select-flashtool"
   },
   ".mbed-integration-installer": {
     "escape": "mbed-integration:installer-close"
