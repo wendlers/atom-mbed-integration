@@ -6,3 +6,6 @@ sermon_settings.json
 resources/mbed-toolchain
 resources/mbed-installer.py
 *.pyc
+stlink_settings.json
+pyocd_settings.json
+sermon_settings.json
