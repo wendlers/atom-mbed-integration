@@ -3,5 +3,11 @@
     "ctrl-alt-p": "mbed-integration:flash-tool-toggle",
     "ctrl-alt-s": "mbed-integration:flash-tool-flash",
     "ctrl-alt-e": "mbed-integration:flash-tool-erase"
+  },
+  ".mbed-integration-installer": {
+    "escape": "mbed-integration:installer-close"
+  },
+  ".mbed-integration-newprj": {
+    "escape": "mbed-integration:new-project-close"
   }
 }
