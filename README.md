@@ -7,7 +7,7 @@ Basically the following is available after installing this package:
 * A tool-bar to give you quick access to the most common tasks (compile, flash, serial monitor, mbed-cli)
 * Simple 'wizzard' dialog to quickly setup / create a new mbed project
 * Support to compile mbed projects (by using [mbed-cli](https://github.com/ARMmbed/mbed-cli))
-* Flash .hex or .bin files to your device (by using [pyOCD](https://github.com/mbedmicro/pyOCD) or [stlink V2](https://github.com/texane/stlink))
+* Flash .hex or .bin files to your device (by using [pyOCD](https://github.com/mbedmicro/pyOCD) or [stlink](https://github.com/texane/stlink))
 * See the `printf` output from your device on a serial monitor
 
 If you use Atom on a supported system (currently __only Linux x64__), this package will offer to install a complete mbed toolchain, including `mbed-cli`, `pyOCD` and the GCC compiler for ARM.
