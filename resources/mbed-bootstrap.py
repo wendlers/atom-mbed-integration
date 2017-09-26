@@ -11,20 +11,14 @@ if platform.system() != 'Linux':
 
 try:
 
-    try:
-        # try what was installed systemwide (best option)
-        import virtualenv
-        print("Using build in virtualenv")
-    except:
-
-        if platform.linux_distribution()[0].lower() == 'debian':
-            # debian has a special version
-            import virtualenv_debian as virtualenv
-            print("Using provided Debian virtualenv")
-        else:
-            # and this is the original version
-            import virtualenv_default as virtualenv
-            print("Using provided default virtualenv")
+    if platform.linux_distribution()[0].lower() == 'debian':
+        # debian has a special version
+        import virtualenv_debian as virtualenv
+        print("Using provided Debian virtualenv")
+    else:
+        # and this is the original version
+        import virtualenv_default as virtualenv
+        print("Using provided default virtualenv")
 
 except Exception as e:
     sys.stderr.write('mbed-installer: No suitable virtualenv. Try "sudo pip2 install virtualenv."\n')
