@@ -11,11 +11,19 @@ if platform.system() != 'Linux':
 
 try:
 
-    if platform.linux_distribution()[0].lower() == 'debian':
-        # debian has a special version
-        import virtualenv_debian as virtualenv
-        print("Using provided Debian virtualenv")
-    else:
+    try:
+
+        if platform.linux_distribution()[0].lower() == 'debian':
+            # debian has a special version
+            import virtualenv_debian as virtualenv
+            print("Using provided Debian virtualenv")
+        else:
+            # try what was installed systemwide (best option)
+            import virtualenv
+            print("Using build in virtualenv")
+
+    except:
+
         # and this is the original version
         import virtualenv_default as virtualenv
         print("Using provided default virtualenv")
