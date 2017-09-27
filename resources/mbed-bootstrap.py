@@ -13,14 +13,14 @@ try:
 
     try:
 
-        if platform.linux_distribution()[0].lower() == 'debian':
+        if platform.linux_distribution()[0].lower() in ['debian', 'ubuntu']:
             # debian has a special version
             import virtualenv_debian as virtualenv
-            print("Using provided Debian virtualenv")
+            print("Using provided Debian/Ubuntu virtualenv")
         else:
-            # try what was installed systemwide (best option)
+            # try local version
             import virtualenv
-            print("Using build in virtualenv")
+            print("Using default virtualenv")
 
     except:
 
